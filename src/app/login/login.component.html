@@ -1,0 +1,38 @@
+<h3>Login to see your to-dos</h3>
+<div class="container">
+  <div class="md-6">
+  <form (ngSubmit)="login()" #f="ngForm">
+    <div class="form-group">
+      <label for="userName">User Name</label>
+      <input 
+        type="text" 
+        class="form-control" 
+        id="userName" 
+        name="userName"
+        placeholder="User Name"
+        required
+        [(ngModel)]="userName">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input 
+        type="password" 
+        class="form-control" 
+        id="password" 
+        name="password"
+        placeholder="Password"
+        required
+        [(ngModel)]="password">
+    </div>
+    <button type="submit" class="btn btn-primary">Sign in</button>
+  </form>
+</div>
+<br/><br/>
+<div class="alert alert-danger" role="alert" *ngIf="isLoggedIn; else failedLog" >
+    Congratulations.. you logged into the app..
+</div>
+<ng-template #failedLog>
+    <div class="alert alert-danger" role="alert">
+      Please login to see your to do list..
+    </div>
+</ng-template> 

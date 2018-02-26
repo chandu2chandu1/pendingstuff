@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="card" style="width: 18rem;" *ngFor="let list of myToDoList">
+      <div class="card-body">
+        <h5 class="card-title">{{ list.listId }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ list.listDescription }}</h6>
+        <a class="card-link" routerLink="showItems">Show my items</a>
+        <a class="card-link" routerLink="removeList">Remove List</a>
+      </div>
+    </div>
+</div>
